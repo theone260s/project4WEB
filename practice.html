@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LingoUp — изучай английский легко и интересно">
+  <title>Практика — LingoUp</title>
+
+  <!-- Шрифты Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Шапка сайта: логотип, меню и кнопка записи -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">🦉 LingoUp</a>
+
+      <!-- Бургер-меню для мобильных (работает на checkbox без JS) -->
+      <input class="burger-checkbox" type="checkbox" id="burger">
+      <label class="burger" for="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Главная</a></li>
+          <li><a class="nav-link" href="courses.html">Курсы</a></li>
+          <li><a class="nav-link" href="contacts.html">Контакты</a></li>
+          <li><a class="nav-link active" href="practice.html">Практика</a></li>
+        </ul>
+      </nav>
+
+      <a class="header-action" href="contacts.html">Записаться →</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">📚 Учимся вместе</span>
+        <h1>Практика английского</h1>
+        <p>Повтори простые слова и проверь себя!</p>
+      </div>
+    </section>
+
+    <!-- Слова дня -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">5 слов на сегодня</h2>
+
+        <div class="steps">
+          <div class="step"><span>🍎</span><h3>Apple</h3><p>Яблоко</p></div>
+          <div class="step"><span>🐱</span><h3>Cat</h3><p>Кошка</p></div>
+          <div class="step"><span>📖</span><h3>Book</h3><p>Книга</p></div>
+          <div class="step"><span>🏠</span><h3>House</h3><p>Дом</p></div>
+          <div class="step"><span>💧</span><h3>Water</h3><p>Вода</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тесты для трёх уровней с автоматической проверкой -->
+    <section class="section section-light" id="test-a1">
+      <div class="container">
+        <h2 class="section-title">A1 — Начальный уровень</h2>
+        <p class="quiz-intro">Выбери ответы на три вопроса и нажми «Проверить ответы».</p>
+        <div class="quiz-card">
+          <fieldset class="quiz-question">
+            <legend>1. Как переводится Apple?</legend>
+            <label class="quiz-option" for="a1q11"><input type="radio" id="a1q11" name="a1q1"> Книга</label>
+            <label class="quiz-option" for="a1q12"><input type="radio" id="a1q12" data-correct="true" name="a1q1"> Яблоко</label>
+            <label class="quiz-option" for="a1q13"><input type="radio" id="a1q13" name="a1q1"> Дом</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>2. Как переводится Cat?</legend>
+            <label class="quiz-option" for="a1q21"><input type="radio" id="a1q21" name="a1q2"> Собака</label>
+            <label class="quiz-option" for="a1q22"><input type="radio" id="a1q22" data-correct="true" name="a1q2"> Кошка</label>
+            <label class="quiz-option" for="a1q23"><input type="radio" id="a1q23" name="a1q2"> Птица</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>3. Как переводится Book?</legend>
+            <label class="quiz-option" for="a1q31"><input type="radio" id="a1q31" name="a1q3"> Стол</label>
+            <label class="quiz-option" for="a1q32"><input type="radio" id="a1q32" data-correct="true" name="a1q3"> Книга</label>
+            <label class="quiz-option" for="a1q33"><input type="radio" id="a1q33" name="a1q3"> Школа</label>
+          </fieldset>
+          <button class="button quiz-check" type="button" onclick="checkQuiz('a1')">Проверить ответы ✓</button>
+          <p class="quiz-result" id="result-a1" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="test-b1">
+      <div class="container">
+        <h2 class="section-title">B1 — Средний уровень</h2>
+        <p class="quiz-intro">Выбери ответы на три вопроса и нажми «Проверить ответы».</p>
+        <div class="quiz-card">
+          <fieldset class="quiz-question">
+            <legend>1. She ___ to school every day.</legend>
+            <label class="quiz-option" for="b1q11"><input type="radio" id="b1q11" name="b1q1"> go</label>
+            <label class="quiz-option" for="b1q12"><input type="radio" id="b1q12" data-correct="true" name="b1q1"> goes</label>
+            <label class="quiz-option" for="b1q13"><input type="radio" id="b1q13" name="b1q1"> going</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>2. I have ___ finished my homework.</legend>
+            <label class="quiz-option" for="b1q21"><input type="radio" id="b1q21" data-correct="true" name="b1q2"> already</label>
+            <label class="quiz-option" for="b1q22"><input type="radio" id="b1q22" name="b1q2"> tomorrow</label>
+            <label class="quiz-option" for="b1q23"><input type="radio" id="b1q23" name="b1q2"> yesterday</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>3. If it rains, I ___ at home.</legend>
+            <label class="quiz-option" for="b1q31"><input type="radio" id="b1q31" name="b1q3"> stayed</label>
+            <label class="quiz-option" for="b1q32"><input type="radio" id="b1q32" name="b1q3"> staying</label>
+            <label class="quiz-option" for="b1q33"><input type="radio" id="b1q33" data-correct="true" name="b1q3"> will stay</label>
+          </fieldset>
+          <button class="button quiz-check" type="button" onclick="checkQuiz('b1')">Проверить ответы ✓</button>
+          <p class="quiz-result" id="result-b1" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="test-c1">
+      <div class="container">
+        <h2 class="section-title">C1 — Продвинутый уровень</h2>
+        <p class="quiz-intro">Выбери ответы на три вопроса и нажми «Проверить ответы».</p>
+        <div class="quiz-card">
+          <fieldset class="quiz-question">
+            <legend>1. Had I known, I ___ helped you.</legend>
+            <label class="quiz-option" for="c1q11"><input type="radio" id="c1q11" name="c1q1"> will have</label>
+            <label class="quiz-option" for="c1q12"><input type="radio" id="c1q12" data-correct="true" name="c1q1"> would have</label>
+            <label class="quiz-option" for="c1q13"><input type="radio" id="c1q13" name="c1q1"> have</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>2. No sooner had he arrived ___ it started raining.</legend>
+            <label class="quiz-option" for="c1q21"><input type="radio" id="c1q21" data-correct="true" name="c1q2"> than</label>
+            <label class="quiz-option" for="c1q22"><input type="radio" id="c1q22" name="c1q2"> when</label>
+            <label class="quiz-option" for="c1q23"><input type="radio" id="c1q23" name="c1q2"> then</label>
+          </fieldset>
+          <fieldset class="quiz-question">
+            <legend>3. She insisted that he ___ present.</legend>
+            <label class="quiz-option" for="c1q31"><input type="radio" id="c1q31" name="c1q3"> is</label>
+            <label class="quiz-option" for="c1q32"><input type="radio" id="c1q32" data-correct="true" name="c1q3"> be</label>
+            <label class="quiz-option" for="c1q33"><input type="radio" id="c1q33" name="c1q3"> was</label>
+          </fieldset>
+          <button class="button quiz-check" type="button" onclick="checkQuiz('c1')">Проверить ответы ✓</button>
+          <p class="quiz-result" id="result-c1" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Совет и переход к курсам -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Совет для обучения</h2>
+        <p>Учи по 5 новых слов каждый день. Повторяй их вслух и составляй простые предложения.</p>
+        <p style="margin-top:22px"><a class="button" href="courses.html">Посмотреть курсы →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Подвал сайта: описание, ссылки на страницы и контакты -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html">🦉 LingoUp</a>
+        <p>Английский каждый день — маленькими шагами к большой цели.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Страницы</h3>
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="practice.html">Практика</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Связаться</h3>
+        <a href="mailto:hello@lingoup.example">hello@lingoup.example</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
+    </div>
+
+    <div class="container copyright">© 2026 LingoUp. Учебный проект. Контакты и цены демонстрационные.</div>
+  </footer>
+
+  <script>
+    // Проверяет три вопроса выбранного уровня.
+    function checkQuiz(level) {
+      const section = document.getElementById('test-' + level);
+      const questions = section.querySelectorAll('.quiz-question');
+      let score = 0;
+      let answered = 0;
+
+      questions.forEach(function(question) {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const correct = question.querySelector('input[data-correct="true"]');
+        const options = question.querySelectorAll('.quiz-option');
+
+        options.forEach(function(option) {
+          option.classList.remove('correct-answer', 'wrong-answer');
+        });
+
+        if (selected) {
+          answered++;
+          if (selected === correct) {
+            score++;
+          } else {
+            selected.closest('label').classList.add('wrong-answer');
+          }
+        }
+        correct.closest('label').classList.add('correct-answer');
+      });
+
+      const result = document.getElementById('result-' + level);
+      result.textContent = 'Результат: ' + score + ' из 3. ' +
+        (answered < 3 ? 'Не отвечено на вопросов: ' + (3 - answered) + '.' :
+        score === 3 ? 'Отлично! Все ответы верные!' : 'Посмотри выделенные ответы и попробуй ещё раз.');
+    }
+  </script>
+</body>
+
+</html>
